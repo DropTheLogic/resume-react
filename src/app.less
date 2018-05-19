@@ -1,0 +1,375 @@
+/**************************
+Variables
+**************************/
+// Colors
+@cool-grey: #3a3a3a;
+@light-grey: #eee;
+@dark-sky-blue: #8fbfe0;
+@carmine: #e54b4b;
+@russian-violet: #3d2645;
+@picton-blue: #48beff;
+
+@conrete-back: url("https://www.danny-marquez.com/images/patterns/concrete_seamless/concrete_seamless.png");
+
+@theme-colors: red @carmine, purple @russian-violet, blue @dark-sky-blue, bblue @picton-blue;
+@sub-theme: darken(@picton-blue, 50%);
+// @randomizer: `Math.round(Math.random() * 4)`;
+
+@body-font: 'Raleway', sans-serif;
+@header-font: 'Mukta', serif;
+@font-size: 15px;
+@font-size-menu: @font-size + 12px;
+@highlight: @dark-sky-blue;
+@highlight-lighter: lighten(@highlight, 10%);
+@highlight-back: #000;
+@hover-transition: all .2s ease-out;
+
+@desktop-min: 600px;
+
+
+body {
+	font-family: @body-font;
+	font-size: @font-size;
+	background-color: @light-grey;
+
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	min-height: 100vh;
+}
+
+body::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -20;
+
+	opacity: 0.75;
+	background-image: @conrete-back;
+}
+
+h1, h2, h3 {
+	font-family: @header-font;
+	color: #333;
+	text-shadow: 2px 2px #ccc;
+	text-transform: uppercase;
+	letter-spacing: -2.5px;
+}
+
+h1 {
+	font-size: @font-size + 38px;
+	line-height: @font-size + 32px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 75%;
+}
+
+h2 {
+	font-size: @font-size + 20px;
+}
+
+h3 {
+	font-size: @font-size + 14px;
+	border-bottom: 1px solid #888;
+}
+
+h4 {
+	font-family: @header-font;
+	color: #333;
+	font-size: @font-size + 6px;
+	letter-spacing: -1px;
+	margin-bottom: 2px;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 19;
+	pointer-events: none;
+	background-color: #fff;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 0;
+	box-shadow: 0px 4px 6px -4px #333;
+
+	h4 {
+		font-family: @body-font;
+		color: darken(@highlight, 40%);
+		margin: -10px 0 0;
+		padding-top: 5px;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+/**************************
+Nav
+**************************/
+nav {
+	background: @cool-grey;
+	color: #fff;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 20;
+	padding-top: 10px;
+
+	transition: transform 3s ease-out;
+	font-family: @header-font;
+
+	@media screen and (min-width: @desktop-min) {
+		position: sticky;
+		top: 115px;
+		height: 40px;
+		padding-top: 0;
+		display: flex;
+		background: #eee;
+		color: @cool-grey;
+		box-shadow: 0px 4px 6px -4px #333;
+		border-top: 1px solid #ccc;
+	}
+
+	h1 {
+		color: @dark-sky-blue;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #eee;
+		text-shadow: 2px 2px #000;
+
+		@media screen and (min-width: @desktop-min) {
+			display: none;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+		font-size: @font-size-menu;
+		width: 160px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding: 20px 0;
+
+		@media screen and (min-width: @desktop-min) {
+			display: flex;
+			justify-content: center;
+			font-size: @font-size + 4px;
+
+			padding: 0;
+			width: 100%;
+		}
+	}
+
+	li {
+		padding: 12px;
+		border: 3px double transparent;
+		text-transform: uppercase;
+		text-shadow: 2px 2px #000;
+
+		@media screen and (min-width: @desktop-min) {
+			padding: 4px;
+			text-shadow: 2px 2px #fff;
+		}
+	}
+	li:hover {
+		color: @highlight;
+		transition: @hover-transition;
+
+		@media screen and (min-width: @desktop-min) {
+			background: transparent;
+			border: 3px double transparent;
+			color: @carmine;
+			text-shadow: 2px 2px #fff;
+		}
+	}
+}
+
+.closed {
+	transform: translate(-1000px);
+}
+
+.menu-button {
+	position: fixed;
+	display: inline;
+	top: 20px;
+	right: 20px;
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 16px;
+	z-index: 2222222;
+	color: #fff;
+}
+
+.menu-button:hover {
+	background: @highlight;
+}
+
+.close-icon::after {
+	content: '✕';
+}
+
+.ham-icon::after {
+	content: '☰';
+	color: @cool-grey;
+}
+
+
+/**************************
+Profile Section Styles
+**************************/
+#Profile {
+	.profile-pic {
+		height: 55vh;
+		margin-top: 10px;
+
+		background-color: #fff;
+		background-image: url("https://www.danny-marquez.com/portfolio/images/danny_landscape.jpg");
+		background-position: 0 50%;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		box-shadow: 2px 2px 8px #999;
+		border: 5px solid #fff;
+	}
+	.row {
+		align-items: baseline;
+		line-height: @font-size + 6px;
+	}
+	.bio-prop {
+		font-size: @font-size - 2px;
+		text-transform: uppercase;
+		color: @carmine;
+	}
+}
+
+
+/**************************
+Resume Section Styles
+**************************/
+#Resume {
+	max-width: 920px;
+	h3 {
+		color: @carmine;
+		margin-bottom: 0px;
+		letter-spacing: -1px;
+	}
+}
+
+.job-stats {
+	// display: flex;
+	// align-items: baseline;
+	// margin: 0 10px 5px;
+	// color: @carmine;
+	line-height: @font-size;
+
+	div {
+		display: inline-block;
+		margin: 3px ;
+		padding: 5px;
+		// background: @carmine;
+		color: #000;
+		.loop-info(1, 4);
+
+		&:hover {
+			color: #fff;
+			text-shadow: 1px 1px #333;
+		}
+	}
+
+	.loop-info(@n, @delta) when (@n < 20) {
+
+		&:nth-child(@{n}) {
+			// margin-right: -@delta + 30px;
+			// margin-left: @delta;
+			// font-size: -(@delta * 0.4) + 18px;
+			// line-height: -(@delta * 0.9) + 18px;
+			background-color: darken(@highlight-lighter, @delta * 0.7);
+			// background-color: hsl((@delta * 1.5), 75%, 60% - @delta * .5);
+			// background-color: hsl((@delta * @randomizer), 70%, 20%);
+		}
+		.loop-info((@n + 1), (@delta + 5px));
+	}
+
+	.divider {
+		align-self: center;
+	}
+
+	.job-employer {
+		// font-weight: 900;
+		// font-size: @font-size + 2px;
+		// line-height: @font-size;
+	}
+}
+
+/**************************
+Portfolio
+**************************/
+#Portfolio {
+	div[class^="col-"] {
+		margin-bottom: 20px;
+	}
+}
+
+figure {
+	margin-bottom: 30px;
+
+	figcaption {
+		font-style: italic;
+	}
+
+	.img-container {
+		max-height: 230px;
+		overflow: hidden;
+		border-radius: 3px;
+		border: 5px solid #fff;
+		box-shadow: 1px 1px 4px #bbb;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+/**************************
+Footer
+**************************/
+footer {
+	position: absolute;
+	// bottom: -100px;
+	left: 0;
+	right: 0;
+	margin-top: 20px;
+	text-align: center;
+	height: 80px;
+
+	background-color: #ccc;
+	border-top: 1px solid #888;
+
+	ul {
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin: 3px;
+			padding: 5px;
+			background-color: #eee;
+			line-height: @font-size;
+
+			&:hover {
+				color: #fff;
+				background-color: @carmine;
+			}
+		}
+	}
+}

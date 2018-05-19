@@ -1,0 +1,28 @@
+{
+  "name": "danny-marquez-resume-react",
+  "version": "1.0.0",
+  "description": "Danny Marquez Front End Developer",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "webpack"
+  },
+  "author": "Danny Marquez",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
