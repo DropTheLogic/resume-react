@@ -195,7 +195,7 @@ class Body extends React.Component {
 		this.setState({
 			selectedSection : e.target.innerHTML,
 			navIsOpen : false
-		}, () => document.body.scrollTop = 0);
+		}, () => document.scrollingElement.scrollTop = 0);
 	}
 
 	handleDrawer(e) {
