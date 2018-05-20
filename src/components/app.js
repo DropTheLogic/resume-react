@@ -214,7 +214,7 @@ class Body extends React.Component {
 					isOpen={this.state.navIsOpen}
 					leaveNavOpen={this.state.leaveNavOpen}
 					navItems={this.navEls}/>
-				<div className={menuCls} onClick={this.handleDrawer}></div>
+				<div className={menuCls} role="button" onClick={this.handleDrawer}></div>
 
 				<div>
 					<Profile bio={bioData} name="Profile" selected={this.state.selectedSection} />
