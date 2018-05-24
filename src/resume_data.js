@@ -1,3 +1,5 @@
+export const navItems = ['Profile', 'Resume', 'Portfolio'];
+
 export const bioData = {
 	name : 'Danny Márquez',
 	age : 38,
