@@ -29,6 +29,9 @@ export class Body extends React.Component {
 	componentDidMount() {
 		// Add listener for screen width on resize
 		window.addEventListener('resize', this.updateWindowSize.bind(this));
+
+		// Initial check for window size
+		this.updateWindowSize();
 	}
 
 	componentWillUnmount() {
