@@ -23,7 +23,7 @@ export class Body extends React.Component {
 
 		this.windowBreak = 600;
 		this.navEls = navItems.map((navItem) =>
-			<li key={navItem} onClick={this.selectSection}>{navItem}</li>);
+			<li key={navItem} role="button" onClick={this.selectSection}>{navItem}</li>);
 	}
 
 	componentDidMount() {
