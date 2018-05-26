@@ -2,8 +2,7 @@ import React from 'react';
 
 export const Nav = (props) => {
 	return (
-		<nav className={ props.isOpen || props.leaveNavOpen ? 'open' : 'hidden closed'}>
-			<h1 className="text-center">Danny Márquez</h1>
+		<nav className={ props.isOpen || props.leaveNavOpen ? 'open' : 'closed'}>
 			<ul>{props.navItems}</ul>
 		</nav>
 	);

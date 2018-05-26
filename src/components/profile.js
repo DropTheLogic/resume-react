@@ -19,12 +19,10 @@ export const Profile = (props) => {
 
 	return (
 		<section id={props.name}
-			className={"container" + (props.selected != props.name ? ' hidden'  : '')}>
+			className={"container-fluid" + (props.selected != props.name ? ' hidden'  : '')}>
 
 			<div className="row">
-				<div className="col-md-2"></div>
-				<div className="profile-pic col-md-8"></div>
-				<div className="col-md-2"></div>
+				<div className="profile-pic col-md-12"></div>
 			</div>
 			<div className="row">
 				<div className="col-md-2"></div>

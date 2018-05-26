@@ -14,35 +14,14 @@ export class Body extends React.Component {
 
 		this.state = {
 			selectedSection : navItems[0],
-			leaveNavOpen : false,
 			navIsOpen : false
 		};
 
 		this.handleDrawer = this.handleDrawer.bind(this);
 		this.selectSection = this.selectSection.bind(this);
 
-		this.windowBreak = 600;
 		this.navEls = navItems.map((navItem) =>
 			<li key={navItem} role="button" onClick={this.selectSection}>{navItem}</li>);
-	}
-
-	componentDidMount() {
-		// Add listener for screen width on resize
-		window.addEventListener('resize', this.updateWindowSize.bind(this));
-
-		// Initial check for window size
-		this.updateWindowSize();
-	}
-
-	componentWillUnmount() {
-		// Remove window resize listener
-		window.removeEventListener('resize', this.updateWindowSize.bind(this));
-	}
-
-	updateWindowSize() {
-		this.setState({
-			leaveNavOpen :
-				window.innerWidth >= this.windowBreak});
 	}
 
 	selectSection(e) {
@@ -65,19 +44,28 @@ export class Body extends React.Component {
 
 		return (
 			<main>
-				<Nav
-					isOpen={this.state.navIsOpen}
-					leaveNavOpen={this.state.leaveNavOpen}
-					navItems={this.navEls}/>
+
 				<div className={menuCls} role="button" onClick={this.handleDrawer}></div>
 
-				<div>
-					<Profile bio={bioData} name="Profile" selected={this.state.selectedSection} />
-					<Resume resume={resumeData} name="Resume" selected={this.state.selectedSection} />
-					<Portfolio data={portfolioData} name="Portfolio" selected={this.state.selectedSection} />
+				<div class="nav-container">
+					<Nav
+						isOpen={this.state.navIsOpen}
+						navItems={this.navEls} />
 				</div>
 
-				<Footer navItems={this.navEls}/>
+				<div class="panels">
+					<div class="panel-left">
+						<div class="panel-image"></div>
+					</div>
+
+					<div class="panel-right">
+						<Profile bio={bioData} name="Profile" selected={this.state.selectedSection} />
+						<Resume resume={resumeData} name="Resume" selected={this.state.selectedSection} />
+						<Portfolio data={portfolioData} name="Portfolio" selected={this.state.selectedSection} />
+						<Footer navItems={this.navEls}/>
+					</div>
+				</div>
+
 			</main>
 		);
 	}

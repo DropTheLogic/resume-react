@@ -50,7 +50,7 @@ export const Resume = (props) => {
 
 	return (
 		<section id={props.name}
-			className={"container" + (props.selected != props.name ? ' hidden'  : '')}>
+			className={"container-fluid" + (props.selected != props.name ? ' hidden'  : '')}>
 			<h2>Resume</h2>
 			<div>
 				<h3>Work Experience</h3>
