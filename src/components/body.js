@@ -29,7 +29,7 @@ export class Body extends React.Component {
 		this.setState({
 			selectedSection : e.target.innerHTML,
 			navIsOpen : false
-		}, () => document.scrollingElement.scrollTop = 0);
+		}, () => document.getElementsByClassName('panel-right')[0].scrollTop = 0);
 	}
 
 	handleDrawer(e) {
