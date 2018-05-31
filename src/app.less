@@ -15,10 +15,20 @@ Variables
 @sub-theme: darken(@picton-blue, 50%);
 // @randomizer: `Math.round(Math.random() * 4)`;
 
-@body-font: 'Raleway', sans-serif;
-@header-font: 'Mukta', serif;
+@black: #111;
+@grey: #ddd;
+@brick: #b64635;
+@main-blue: #2d3e64;
+@light-blue: #dfe7ea;
+@highlight-blue: #87b9f2;
+@dark-blue: #1a2133;
+@main-green: #6b844b;
+@black-green: #323525;
+
+@body-font: 'Quattrocento', Serif;
+@header-font: 'Oswald', Sans-Serif;
 @font-size: 15px;
-@font-size-menu: @font-size + 12px;
+@font-size-menu: @font-size + 17px;
 @highlight: @dark-sky-blue;
 @highlight-lighter: lighten(@highlight, 10%);
 @highlight-back: #000;
@@ -32,6 +42,8 @@ Variables
 body {
 	font-family: @body-font;
 	font-size: @font-size;
+	letter-spacing: -0.25px;
+	color: #111;
 	background-color: @light-grey;
 
 	display: flex;
@@ -55,8 +67,8 @@ body::after {
 
 h1, h2, h3 {
 	font-family: @header-font;
-	color: #333;
-	text-shadow: 2px 2px #ccc;
+	color: #fff;
+	text-shadow: 2px 2px @black;
 	text-transform: uppercase;
 	letter-spacing: -2.5px;
 }
@@ -64,21 +76,25 @@ h1, h2, h3 {
 h1 {
 	font-size: @font-size + 29px;
 	line-height: @font-size + 23px;
+	font-weight: 900;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 0;
-	max-width: 59%;
+	max-width: 240px;
 
-	@media screen and (min-width: 528px) {
-		margin-top: 20px;
-		font-size: @font-size + 38px;
-		line-height: @font-size + 32px;
+	@media screen and (min-width: 500px) {
+		margin-top: 10px;
+		font-size: @font-size + 49px;
+		line-height: @font-size + 45px;
 		max-width: 75%;
 	}
 }
 
 h2 {
-	font-size: @font-size + 20px;
+	font-size: @font-size + 22px;
+	font-weight: 900;
+	color: @black-green;
+	text-shadow: 2px 2px @light-blue;
 }
 
 h3 {
@@ -100,16 +116,16 @@ header {
 	height: @header-height;
 	top: 0;
 	z-index: 19;
-	background-color: #fff;
+	background-color: @main-blue;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 10px 0;
-	box-shadow: 0px 4px 6px -4px #333;
+	box-shadow: 0px 4px 6px -4px @black;
 
 	h4 {
 		font-family: @body-font;
-		color: darken(@highlight, 40%);
+		color: @grey;
 		margin: -10px 0 0;
 		padding-top: 5px;
 	}
@@ -170,7 +186,7 @@ Nav
 }
 
 nav {
-	background: @cool-grey;
+	background: @dark-blue;
 	color: #fff;
 	position: absolute;
 	width: 100%;
@@ -190,25 +206,31 @@ nav {
 
 	ul {
 		list-style-type: none;
-		font-size: @font-size-menu;
-		width: 160px;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
+		// font-size: @font-size-menu;
+		// width: 160px;
+		// margin-left: auto;
+		// margin-right: auto;
+		// text-align: right;
 		padding: 20px 0;
 	}
 
 	li {
-		padding: 12px;
-		border: 3px double transparent;
+		width: min-content;
+		padding: 6px 38px;
+		margin: 8px auto;
+
+		font-size: @font-size-menu;
+		font-weight: 900;
 		text-transform: uppercase;
 		text-shadow: 2px 2px #000;
 	}
 
 	li:hover {
-		color: @highlight;
-		transition: @hover-transition;
+		color: @highlight-blue;
+		transform: scale(1.25);
+		transition: all 0.5s;
 	}
+
 }
 
 .closed {
@@ -226,12 +248,12 @@ nav {
 	text-align: center;
 	font-size: 16px;
 	z-index: 2222222;
-	color: @cool-grey;
+	color: #fff;
 	transition: 0.3s;
 }
 
 .menu-button:hover {
-	color: @highlight-alt;
+	color: @highlight-blue;
 }
 
 .close-icon::after {
@@ -272,7 +294,7 @@ Profile Section Styles
 	.bio-prop {
 		font-size: @font-size - 2px;
 		text-transform: uppercase;
-		color: @carmine;
+		color: @brick;
 	}
 }
 
@@ -283,9 +305,11 @@ Resume Section Styles
 #Resume {
 	max-width: 920px;
 	h3 {
-		color: @carmine;
+		color: @brick;
 		margin-bottom: 0px;
 		letter-spacing: -1px;
+		text-shadow: 1px 1px @black-green;
+		padding-bottom: 4px;
 	}
 }
 
@@ -295,19 +319,17 @@ Resume Section Styles
 	// margin: 0 10px 5px;
 	// color: @carmine;
 	line-height: @font-size;
+	font-family: @header-font;
+	text-transform: uppercase;
 
 	div {
 		display: inline-block;
 		margin: 3px ;
 		padding: 5px;
 		// background: @carmine;
-		color: #000;
+		color: #fff;
+		text-shadow: 1px 1px @black;
 		.loop-info(1, 4);
-
-		&:hover {
-			color: #fff;
-			text-shadow: 1px 1px #333;
-		}
 	}
 
 	.loop-info(@n, @delta) when (@n < 20) {
@@ -317,7 +339,7 @@ Resume Section Styles
 			// margin-left: @delta;
 			// font-size: -(@delta * 0.4) + 18px;
 			// line-height: -(@delta * 0.9) + 18px;
-			background-color: darken(@highlight-lighter, @delta * 0.7);
+			background-color: darken(@highlight-blue, @delta * 0.7);
 			// background-color: hsl((@delta * 1.5), 75%, 60% - @delta * .5);
 			// background-color: hsl((@delta * @randomizer), 70%, 20%);
 		}
@@ -340,7 +362,7 @@ Portfolio
 **************************/
 #Portfolio {
 	div[class^="col-"] {
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 	}
 }
 
@@ -349,6 +371,7 @@ figure {
 
 	figcaption {
 		font-style: italic;
+		font-size: @font-size - 2px;
 	}
 
 	.img-container {
@@ -378,8 +401,8 @@ footer {
 	text-align: center;
 	height: 80px;
 
-	background-color: #ccc;
-	border-top: 1px solid #888;
+	background-color: #e8e8e8;
+	// border-top: 1px solid #888;
 
 	ul {
 		padding: 0;
@@ -389,12 +412,12 @@ footer {
 			display: inline-block;
 			margin: 3px;
 			padding: 5px;
-			background-color: #eee;
 			line-height: @font-size;
+			letter-spacing: -0.75px;
 
 			&:hover {
 				color: #fff;
-				background-color: @carmine;
+				background-color: @brick;
 			}
 		}
 	}
