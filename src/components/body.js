@@ -62,7 +62,7 @@ export class Body extends React.Component {
 						<Profile bio={bioData} name="Profile" selected={this.state.selectedSection} />
 						<Resume resume={resumeData} name="Resume" selected={this.state.selectedSection} />
 						<Portfolio data={portfolioData} name="Portfolio" selected={this.state.selectedSection} />
-						<Footer navItems={this.navEls}/>
+						<Footer navItems={this.navEls} bio={bioData}/>
 					</div>
 				</div>
 

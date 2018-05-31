@@ -17,6 +17,7 @@ Variables
 
 @black: #111;
 @grey: #ddd;
+@dark-grey: #666;
 @brick: #b64635;
 @main-blue: #2d3e64;
 @light-blue: #dfe7ea;
@@ -395,30 +396,46 @@ figure {
 Footer
 **************************/
 footer {
-	left: 0;
-	right: 0;
 	margin-top: 20px;
+	padding: 10px;
 	text-align: center;
-	height: 80px;
+	font-size: @font-size - 3px;
+	color: @dark-grey;
 
 	background-color: #e8e8e8;
-	// border-top: 1px solid #888;
+	border-top: 1px solid @grey;
 
 	ul {
+		margin: 0;
 		padding: 0;
 		list-style: none;
 
 		li {
 			display: inline-block;
-			margin: 3px;
-			padding: 5px;
+			margin: 6px;
+			padding: 2px;
+			border-bottom: 1px solid transparent;
+			font-size: @font-size;
 			line-height: @font-size;
 			letter-spacing: -0.75px;
+			text-transform: uppercase;
 
 			&:hover {
-				color: #fff;
-				background-color: @brick;
+				color: @brick;
+				border-bottom: 1px solid @brick;
 			}
 		}
+	}
+
+	.bio-icon a {
+		color: inherit;
+		font-size: @font-size;
+		display: inline-block;
+		padding: 10px;
+		margin: 0 10px;
+	}
+
+	.bio-icon a:hover {
+		color: @brick;
 	}
 }
