@@ -1,15 +1,14 @@
 export const navItems = ['Profile', 'Resume', 'Portfolio'];
 
 export const bioData = {
-	name : 'Danny Márquez',
-	age : 38,
-	phone : '(917) 399-5264',
-	email : 'DannyBrianMarquez@gmail.com',
-	website : {name : 'danny-marquez.com', url : 'https://www.danny-marquez.com'},
-	github: {name : 'DropTheLogic', url : 'https://github.com/DropTheLogic'},
-	codepen : {name : 'DropTheLogic', url : 'https://www.codepen.io/DropTheLogic'},
-	linkedin : {name : 'dannymarquez', url : 'https://www.linkedin.com/in/dannymarquez/'},
-	twitter: {name : '@DropTheLogic', url : 'https://www.twitter.com/DropTheLogic'}
+	name : {name: 'Danny Márquez', faclass: 'fas fa-user'},
+	phone : {name: '(917) 399-5264', faclass: 'fas fa-phone'},
+	email : {name: 'DannyBrianMarquez@gmail.com', url: 'mailto:DannyBrianMarquez@gmail.com', faclass: 'fas fa-envelope'},
+	website : {name : 'danny-marquez.com', url : 'https://www.danny-marquez.com', faclass: 'fas fa-home'},
+	github: {name : 'DropTheLogic', url : 'https://github.com/DropTheLogic', faclass: 'fab fa-github'},
+	codepen : {name : 'DropTheLogic', url : 'https://www.codepen.io/DropTheLogic', faclass: 'fab fa-codepen'},
+	linkedin : {name : 'dannymarquez', url : 'https://www.linkedin.com/in/dannymarquez/', faclass: 'fab fa-linkedin'},
+	twitter: {name : '@DropTheLogic', url : 'https://www.twitter.com/DropTheLogic', faclass: 'fab fa-twitter'}
 };
 
 export const resumeData = {

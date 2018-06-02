@@ -1,18 +1,25 @@
 import React from 'react';
+import { coverBlurb } from '../cover_blurb';
+
+// Import cover blurb, split by newline
+// TODO: have this import directly from .txt file
+let blurb = coverBlurb.split('/n');
 
 export const Profile = (props) => {
-	// Populate rows of profile info
+	// Populate rows of bio-stat elements
 	let rows = [];
 	for (let listing in props.bio) {
 		const data = props.bio[listing];
 		let dataEl = data;
-		if (typeof data === 'object') {
+		if (data.hasOwnProperty('url')) {
 			dataEl = <a href={data.url} target="_blank">
 					{data.name}</a>;
 		}
+		else dataEl = data.name;
+
 		rows.push(
-			<div key={rows.length} className="row">
-				<div className="col-xs-3 text-right bio-prop">{listing}:</div>
+			<div key={rows.length}>
+				<div className="bio-prop"><i className={data.faclass}></i>{listing}:</div>
 				<div className="bio-listing">{dataEl}</div>
 			</div>);
 	}
@@ -21,15 +28,22 @@ export const Profile = (props) => {
 		<section id={props.name}
 			className={"container-fluid" + (props.selected != props.name ? ' hidden'  : '')}>
 
-			<div className="row">
-				<div className="profile-pic col-md-12"></div>
+			<div className="profile-pic row"></div>
+
+			<h2>Profile</h2>
+
+			<div className="about-me row">
+				<h4 className="col-xs-3" >About me</h4>
+				<div className="col-xs-9 cover-blurb">
+					{blurb.map(p => (<p>{p}</p>))}
+				</div>
 			</div>
-			<div className="row">
-				<div className="col-md-2"></div>
-				<h2 className="col-md-8">Profile</h2>
-				<div className="col-md-2"></div>
+
+			<div className="at-a-glance row">
+				<h4 className="col-xs-3">At a glance</h4>
+				<div className="bio-stats col-xs-9">{rows}</div>
 			</div>
-			{rows}
+
 		</section>
     );
 };
