@@ -4,10 +4,10 @@ export const Portfolio = (props) => {
 	return (
 		<section id={props.name} className={"container-fluid" + (props.selected != props.name ? ' hidden'  : '')}>
 			<h2>Portfolio</h2>
-			<div className="row">
+			<div className="portfolio-grid">
 
 				{props.data.map((project) =>
-					<div className="col-sm-6 col-lg-4" key={project.title}>
+					<div key={project.title}>
 						<a href={project.url} target="_blank">
 							<h4>{project.title}</h4></a>
 						<figure>

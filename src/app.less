@@ -409,18 +409,33 @@ Portfolio
 	div[class^="col-"] {
 		margin-bottom: 5px;
 	}
+
+	h2 {
+		padding-bottom: 10px;
+		border-bottom: 1px solid @grey;
+	}
+
+	h4 {
+		margin-bottom: 5px;
+	}
+}
+
+.portfolio-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+	grid-gap: 2vw;
 }
 
 figure {
-	margin-bottom: 30px;
 
 	figcaption {
 		font-style: italic;
 		font-size: @font-size - 2px;
+		margin-top: 5px;
 	}
 
 	.img-container {
-		max-height: 230px;
+		max-height: 216px;
 		overflow: hidden;
 		border-radius: 3px;
 		border: 5px solid #fff;
@@ -428,10 +443,6 @@ figure {
 
 		img {
 			width: 100%;
-		}
-
-		@media screen and (min-width: @desktop-min) {
-			max-height: 120px;
 		}
 	}
 }
