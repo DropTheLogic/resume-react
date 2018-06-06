@@ -23,6 +23,12 @@ const config = {
 				}, {
 					loader: 'less-loader'
 				}]
+			},
+			{
+				test: /\.(png|svg|jpg|gif)$/,
+				use: [
+					'file-loader?name=[name].[ext]'
+				]
 			}
 		]
 	},

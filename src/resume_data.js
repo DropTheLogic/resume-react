@@ -78,31 +78,31 @@ export const portfolioData = [
 	{
 		"title" : "The Geber Girls",
 		"caption" : "Single page band website using vanilla Javascript, HTML5 and CSS.",
-		"img" : "https://www.danny-marquez.com/portfolio/images/geber-screen-opt.png",
+		"img" : "./images/geber-screen-opt.png",
 		"url" : "https://www.gebergirls.com"
 	},
 	{
 		"title" : "Time Calculator (beta)",
 		"caption" : "Web app to aid in time-based arithmetic calculations. Built with React.js.",
-		"img" : "https://www.danny-marquez.com/portfolio/images/time-calc-screenshot-opt.png",
+		"img" : "./images/danny-marquez-time-calculator-opt.png",
 		"url" : "https://codepen.io/DropTheLogic/full/WEzRPZ"
 	},
 	{
 		"title" : "Schedulizer (alpha)",
 		"caption" : "Spreadsheet inspired web app for scheduling employee work shifts. Built using Javascript and Knockout.js two-way binding.",
-		"img" : "https://www.danny-marquez.com/portfolio/images/schedulizer-screenshot-opt.png",
+		"img" : "./images/schedulizer-screenshot-opt.png",
 		"url" : "https://github.com/DropTheLogic/schedulizer"
 	},
 	{
 		"title" : "The Williamsburger",
 		"caption" : "Responsive web mapping app using Google Maps and Foursquare APIs to map a curated list of burger restaurants in Williamsburg.",
-		"img" : "https://www.danny-marquez.com/portfolio/images/danny-marquez-williamsburger-screen.png",
+		"img" : "./images/danny-marquez-williamsburger-screen.png",
 		"url" : "https://www.danny-marquez.com/williamsburger/"
 	},
 	{
 		"title" : "Bug Run! - OOP Javascript Game",
 		"caption" : "Simple arcade game made using Javascript and HTML5 canvas.",
-		"img" : "https://www.danny-marquez.com/portfolio/images/danny-marquez-game-screen.png",
+		"img" : "./images/danny-marquez-game-screen.png",
 		"url" : "https://danny-marquez.com/BugRun/"
 	},
 ];
