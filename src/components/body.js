@@ -47,18 +47,18 @@ export class Body extends React.Component {
 
 				<div className={menuCls} role="button" onClick={this.handleDrawer}></div>
 
-				<div class="nav-container">
+				<div className="nav-container">
 					<Nav
 						isOpen={this.state.navIsOpen}
 						navItems={this.navEls} />
 				</div>
 
-				<div class="panels">
-					<div class="panel-left">
-						<div class="panel-image"></div>
+				<div className="panels">
+					<div className="panel-left">
+						<div className="panel-image"></div>
 					</div>
 
-					<div class="panel-right">
+					<div className="panel-right">
 						<Profile bio={bioData} name="Profile" selected={this.state.selectedSection} />
 						<Resume resume={resumeData} name="Resume" selected={this.state.selectedSection} />
 						<Portfolio data={portfolioData} name="Portfolio" selected={this.state.selectedSection} />
