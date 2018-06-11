@@ -39,19 +39,14 @@ export class Body extends React.Component {
 
 	render() {
 		let menuCls = 'menu-button' +
-			(this.state.navIsOpen ? ' close-icon' : ' ham-icon') +
-			(this.state.leaveNavOpen ? ' hidden' : '');
+			(this.state.navIsOpen ? ' close-icon' : ' ham-icon');
 
 		return (
 			<main>
 
 				<div className={menuCls} role="button" onClick={this.handleDrawer}></div>
 
-				<div className="nav-container">
-					<Nav
-						isOpen={this.state.navIsOpen}
-						navItems={this.navEls} />
-				</div>
+				<Nav isOpen={this.state.navIsOpen} navItems={this.navEls} />
 
 				<div className="panels">
 					<div className="panel-left">
