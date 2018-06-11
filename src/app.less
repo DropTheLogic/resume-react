@@ -2,39 +2,27 @@
 Variables
 **************************/
 // Colors
-@cool-grey: #3a3a3a;
-@light-grey: #eee;
-@dark-sky-blue: #8fbfe0;
-@carmine: #e54b4b;
-@russian-violet: #3d2645;
-@picton-blue: #48beff;
-
-@conrete-back: url("./images/concrete_seamless.png");
-
-@theme-colors: red @carmine, purple @russian-violet, blue @dark-sky-blue, bblue @picton-blue;
-@sub-theme: darken(@picton-blue, 50%);
-// @randomizer: `Math.round(Math.random() * 4)`;
-
 @black: #111;
+@light-black: #333;
+@light-grey: #e8e8e8;
 @grey: #ddd;
 @dark-grey: #666;
 @brick: #b64635;
 @main-blue: #2d3e64;
 @light-blue: #dfe7ea;
-@highlight-blue: #87b9f2;
+@bright-blue: #87b9f2;
 @dark-blue: #1a2133;
-@main-green: #6b844b;
-@black-green: #323525;
+
+@highlight: @bright-blue;
+@highlight-alt: lighten(saturate(@brick, 20%), 10%);
+
+@conrete-back: url("./images/concrete_seamless.png");
 
 @body-font: 'Quattrocento', Serif;
 @header-font: 'Oswald', Sans-Serif;
 @font-size: 15px;
 @font-size-menu: @font-size + 17px;
-@highlight: @dark-sky-blue;
-@highlight-lighter: lighten(@highlight, 10%);
-@highlight-back: #000;
-@highlight-alt: @carmine;
-@hover-transition: all .2s ease-out;
+@border-grey: 1px solid @grey;
 
 @desktop-min: 800px;
 @header-height: 115px;
@@ -44,8 +32,8 @@ body {
 	font-family: @body-font;
 	font-size: @font-size;
 	letter-spacing: -0.25px;
-	color: #111;
-	background-color: @light-grey;
+	color: @black;
+	background-color: lighten(@light-grey, 2%);
 
 	display: flex;
 	flex-direction: column;
@@ -94,18 +82,22 @@ h1 {
 h2 {
 	font-size: @font-size + 22px;
 	font-weight: 900;
-	color: @black-green;
+	color: @light-black;
 	text-shadow: 2px 2px @light-blue;
 }
 
 h3 {
 	font-size: @font-size + 14px;
-	border-bottom: 1px solid #888;
+	color: @brick;
+	letter-spacing: -1px;
+	text-shadow: 1px 1px @light-black;
+	border-bottom: @border-grey;
+	padding-bottom: 4px;
 }
 
 h4 {
 	font-family: @header-font;
-	color: #333;
+	color: @light-black;
 	font-size: @font-size + 6px;
 	letter-spacing: -1px;
 	margin-bottom: 2px;
@@ -198,13 +190,6 @@ nav {
 	transition: all 0.5s ease-out;
 	font-family: @header-font;
 
-	h1 {
-		color: @dark-sky-blue;
-		padding-bottom: 15px;
-		border-bottom: 1px solid #eee;
-		text-shadow: 2px 2px #000;
-	}
-
 	ul {
 		list-style-type: none;
 		padding: 20px 0;
@@ -218,11 +203,11 @@ nav {
 		font-size: @font-size-menu;
 		font-weight: 900;
 		text-transform: uppercase;
-		text-shadow: 2px 2px #000;
+		text-shadow: 2px 2px @black;
 	}
 
 	li:hover {
-		color: @highlight-blue;
+		color: @highlight;
 		transform: scale(1.25);
 		transition: all 0.5s;
 	}
@@ -249,7 +234,7 @@ nav {
 }
 
 .menu-button:hover {
-	color: @highlight-blue;
+	color: @highlight;
 }
 
 .close-icon::after {
@@ -286,7 +271,7 @@ Profile Section Styles
 
 	h2 {
 		padding-bottom: 10px;
-		border-bottom: 1px solid @grey;
+		border-bottom: @border-grey;
 	}
 
 	h4 {
@@ -302,14 +287,14 @@ Profile Section Styles
 	p:last-of-type {
 		margin-bottom: 10px;
 		padding-bottom: 10px;
-		border-bottom: 1px solid @grey;
+		border-bottom: @border-grey;
 	}
 
 	a {
 		color: @main-blue;
 
 		&:active {
-			color: @highlight-blue;
+			color: @highlight;
 		}
 	}
 
@@ -349,20 +334,9 @@ Resume Section Styles
 **************************/
 #Resume {
 	max-width: 920px;
-	h3 {
-		color: @brick;
-		margin-bottom: 0px;
-		letter-spacing: -1px;
-		text-shadow: 1px 1px @black-green;
-		padding-bottom: 4px;
-	}
 }
 
 .job-stats {
-	// display: flex;
-	// align-items: baseline;
-	// margin: 0 10px 5px;
-	// color: @carmine;
 	line-height: @font-size;
 	font-family: @header-font;
 	text-transform: uppercase;
@@ -371,22 +345,14 @@ Resume Section Styles
 		display: inline-block;
 		margin: 3px ;
 		padding: 5px;
-		// background: @carmine;
 		color: #fff;
 		text-shadow: 1px 1px @black;
 		.loop-info(1, 4);
 	}
 
 	.loop-info(@n, @delta) when (@n < 20) {
-
 		&:nth-child(@{n}) {
-			// margin-right: -@delta + 30px;
-			// margin-left: @delta;
-			// font-size: -(@delta * 0.4) + 18px;
-			// line-height: -(@delta * 0.9) + 18px;
-			background-color: darken(@highlight-blue, @delta * 0.7);
-			// background-color: hsl((@delta * 1.5), 75%, 60% - @delta * .5);
-			// background-color: hsl((@delta * @randomizer), 70%, 20%);
+			background-color: darken(@highlight, @delta * 0.7);
 		}
 		.loop-info((@n + 1), (@delta + 5px));
 	}
@@ -394,25 +360,15 @@ Resume Section Styles
 	.divider {
 		align-self: center;
 	}
-
-	.job-employer {
-		// font-weight: 900;
-		// font-size: @font-size + 2px;
-		// line-height: @font-size;
-	}
 }
 
 /**************************
-Portfolio
+Portfolio Section Styles
 **************************/
 #Portfolio {
-	div[class^="col-"] {
-		margin-bottom: 5px;
-	}
-
 	h2 {
 		padding-bottom: 10px;
-		border-bottom: 1px solid @grey;
+		border-bottom: @border-grey;
 	}
 
 	h4 {
@@ -457,8 +413,8 @@ footer {
 	font-size: @font-size - 3px;
 	color: @dark-grey;
 
-	background-color: #e8e8e8;
-	border-top: 1px solid @grey;
+	background-color: @light-grey;
+	border-top: @border-grey;
 
 	ul {
 		margin: 0;
