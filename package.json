@@ -5,7 +5,8 @@
   "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "webpack"
+    "dist": "webpack",
+    "start:dev": "webpack-dev-server"
   },
   "author": "Danny Marquez",
   "license": "ISC",
@@ -20,7 +21,8 @@
     "less-loader": "^4.1.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3"
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "react": "^16.2.0",
