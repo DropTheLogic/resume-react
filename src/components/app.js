@@ -29,7 +29,7 @@ export default class App extends React.Component {
 		this.setState({
 			selectedSection : e.target.innerHTML,
 			navIsOpen : false
-		}, () => document.getElementsByClassName('panel-right')[0].scrollTop = 0);
+		}, () => window.scrollTo(0, 0));
 	}
 
 	handleDrawer(e) {
@@ -53,17 +53,13 @@ export default class App extends React.Component {
 
 				<Nav isOpen={this.state.navIsOpen} navItems={this.navEls} />
 
-				<div className="panels">
-					<div className="panel-left">
-						<div className="panel-image"></div>
-					</div>
+				<div className="hero-image"></div>
 
-					<div className="panel-right">
-						<Profile bio={bioData} name="Profile" selected={this.state.selectedSection} />
-						<Resume resume={resumeData} name="Resume" selected={this.state.selectedSection} />
-						<Portfolio data={portfolioData} name="Portfolio" selected={this.state.selectedSection} />
-						<Footer navItems={this.navEls} bio={bioData}/>
-					</div>
+				<div className="sections">
+					<Profile bio={bioData} name="Profile" selected={this.state.selectedSection} />
+					<Resume resume={resumeData} name="Resume" selected={this.state.selectedSection} />
+					<Portfolio data={portfolioData} name="Portfolio" selected={this.state.selectedSection} />
+					<Footer navItems={this.navEls} bio={bioData}/>
 				</div>
 
 			</main>
