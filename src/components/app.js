@@ -51,7 +51,7 @@ export default class App extends Component {
 
 				<header>
 					<h1 className="text-center">Danny Márquez</h1>
-					<h4>Front End Web Developer</h4>
+					<h4>Software Engineer</h4>
 				</header>
 
 				<div
