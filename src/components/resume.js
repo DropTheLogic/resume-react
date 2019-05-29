@@ -8,15 +8,18 @@ export const Resume = (props) => {
 		const job = props.resume.Jobs[i];
 		// Get job description
 		const descriptions = job.description.map((bullet) =>
-			<li key={bullet}>{bullet}</li>
-		);
+			<li key={bullet}>{bullet}</li>);
 
 		jobs.push(
 			<div key={i}>
 				<h4>{job.title}</h4>
 				<div className="job-stats">
-					<a href={job.url} target="_blank">
-						<div>{job.employer}</div></a>
+					<a
+						href={job.url}
+						target="_blank"
+						rel="noreferrer noopener">
+						<div>{job.employer}</div>
+					</a>
 					<div>{job.dates}</div>
 					<div>{job.location}</div>
 				</div>
@@ -32,14 +35,22 @@ export const Resume = (props) => {
 		<div>
 			<h4>{crs.school}</h4>
 			<div className="job-stats">
-				<a href={crs.url} target="_blank">
-					<div>{crs.title}</div></a>
+				<a
+					href={crs.url}
+					target="_blank"
+					rel="noreferrer noopener">
+					<div>{crs.title}</div>
+				</a>
 				<div>{crs.date}</div>
 			</div>
 			<h4>{ed.name}</h4>
 			<div className="job-stats">
-				<a href={ed.url} target="_blank">
-					<div>{ed.department}</div></a>
+				<a
+					href={ed.url}
+					target="_blank"
+					rel="noreferrer noopener">
+					<div>{ed.department}</div>
+				</a>
 				<div>{ed.degree}</div>
 				<div>{ed.majors[0]}</div>
 				<div>{ed.dates}</div>
@@ -49,8 +60,10 @@ export const Resume = (props) => {
 	);
 
 	return (
-		<section id={props.name}
-			className={"container-fluid" + (props.selected != props.name ? ' hidden'  : '')}>
+		<section
+			id={props.name}
+			className={'container-fluid' +
+				(props.selected !== props.name ? ' hidden' : '')}>
 			<h2>Resume</h2>
 			<div>
 				<h3>Work Experience</h3>

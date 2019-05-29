@@ -25,17 +25,19 @@ export const Profile = (props) => {
 	}
 
 	return (
-		<section id={props.name}
-			className={"container-fluid" + (props.selected != props.name ? ' hidden'  : '')}>
+		<section
+			id={props.name}
+			className={'container-fluid' +
+				(props.selected !== props.name ? ' hidden'  : '')}>
 
-			<div className="profile-pic row"></div>
+			<div className="profile-pic row" />
 
 			<h2>Profile</h2>
 
 			<div className="about-me row">
 				<h4 className="col-xs-3" >About me</h4>
 				<div className="col-xs-9 cover-blurb">
-					{blurb.map(p => (<p>{p}</p>))}
+					{blurb.map(p => (<p key="p">{p}</p>))}
 				</div>
 			</div>
 

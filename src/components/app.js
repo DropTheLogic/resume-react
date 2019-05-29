@@ -8,13 +8,13 @@ import { Resume } from './resume';
 import { Portfolio } from './portfolio';
 import { Footer } from './footer';
 
-export default class App extends React.Component {
+export default class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			selectedSection : navItems[0],
-			navIsOpen : false
+			selectedSection: navItems[0],
+			navIsOpen: false
 		};
 
 		this.handleDrawer = this.handleDrawer.bind(this);
@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
 		this.navEls = navItems.map((navItem) => (
 			<a href="#" aria-label={navItem} key={navItem}>
-				<li key={navItem} role="button" onClick={this.selectSection}>
+				<li key={navItem} onClick={this.selectSection}>
 				{navItem}
 				</li>
 			</a>
@@ -32,14 +32,14 @@ export default class App extends React.Component {
 	selectSection(e) {
 		e.preventDefault();
 		this.setState({
-			selectedSection : e.target.innerHTML,
-			navIsOpen : false
+			selectedSection: e.target.innerHTML,
+			navIsOpen: false
 		}, () => window.scrollTo(0, 0));
 	}
 
 	handleDrawer(e) {
 		e.preventDefault();
-		this.setState({navIsOpen : this.state.navIsOpen ? false : true })
+		this.setState((prevState) => ({navIsOpen: !prevState.navIsOpen}));
 	}
 
 	render() {
@@ -62,13 +62,24 @@ export default class App extends React.Component {
 
 				<Nav isOpen={this.state.navIsOpen} navItems={this.navEls} />
 
-				<div className="hero-image"></div>
+				<div className="hero-image" />
 
 				<div className="sections">
-					<Profile bio={bioData} name="Profile" selected={this.state.selectedSection} />
-					<Resume resume={resumeData} name="Resume" selected={this.state.selectedSection} />
-					<Portfolio data={portfolioData} name="Portfolio" selected={this.state.selectedSection} />
-					<Footer navItems={this.navEls} bio={bioData}/>
+					<Profile
+						bio={bioData}
+						name="Profile"
+						selected={this.state.selectedSection} />
+					<Resume
+						resume={resumeData}
+						name="Resume"
+						selected={this.state.selectedSection} />
+					<Portfolio
+						data={portfolioData}
+						name="Portfolio"
+						selected={this.state.selectedSection} />
+					<Footer
+						navItems={this.navEls}
+						bio={bioData} />
 				</div>
 
 			</main>

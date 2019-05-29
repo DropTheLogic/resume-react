@@ -12,8 +12,12 @@ export const Footer = (props) => {
 			let cls = `fab fa-${prop}`; // Font Awesome icon class
 			iconEls.push(
 				<span key={prop} className="bio-icon">
-					<a href={props.bio[prop].url} aria-label={prop} target="_blank">
-						<i class={cls}></i>
+					<a
+						href={props.bio[prop].url}
+						aria-label={prop}
+						rel="noreferrer noopener"
+						target="_blank">
+						<i className={cls} />
 					</a>
 				</span>
 			);
