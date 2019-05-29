@@ -20,8 +20,13 @@ export default class App extends React.Component {
 		this.handleDrawer = this.handleDrawer.bind(this);
 		this.selectSection = this.selectSection.bind(this);
 
-		this.navEls = navItems.map((navItem) =>
-			<li key={navItem} role="button" onClick={this.selectSection}>{navItem}</li>);
+		this.navEls = navItems.map((navItem) => (
+			<a href="#" aria-label={navItem} key={navItem}>
+				<li key={navItem} role="button" onClick={this.selectSection}>
+				{navItem}
+				</li>
+			</a>
+		));
 	}
 
 	selectSection(e) {
@@ -49,7 +54,11 @@ export default class App extends React.Component {
 					<h4>Front End Web Developer</h4>
 				</header>
 
-				<div className={menuCls} role="button" onClick={this.handleDrawer}></div>
+				<div
+					className={menuCls}
+					role="button"
+					aria-label="Menu"
+					onClick={this.handleDrawer} />
 
 				<Nav isOpen={this.state.navIsOpen} navItems={this.navEls} />
 
