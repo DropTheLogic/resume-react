@@ -14,27 +14,27 @@ export const bioData = {
 export const resumeData = {
 	Jobs: [
 		{
-			title: 'Web Developer/Graphic Designer',
-			employer: 'Freelance',
-			dates: '2001-current',
-			location: '615 W 173 St, New York City',
+			title: 'Full Stack Engineer Student',
+			employer: 'Fullstack Academy of Code',
+			dates: '2019',
+			location: '5 Hanover Sq., New York City',
 			description: [
-				'Design and maintain websites and/or promotional material for artists and musicians',
-				'Work with clients to find theme and feel for their visual representation',
-				'Develop and maintain web sites for clients, using modern responsive design'
+				'Worked with teams and alone to deliver full stack applications under strict deadlines',
+				'Peer-programed through critical points to insure healthy codebase',
+				'Participated in code reviews to maintain focus and clarity within large projects'
 				],
-			url: 'http://www.danny-marquez.com/portfolio/'
+			url: 'https://www.fullstackacademy.com/software-engineering-immersive'
 		},
 		{
 			title: 'Manager',
 			employer: "Nick's Family-Style Restaurant and Pizzeria",
-			dates: '2003-current',
+			dates: '2003-2019',
 			location: '1814 2nd Ave, New York City',
 			description: [
-				'Oversee and manage mid-sized restaurant and staff of over 20 workers',
-				'Responsible for inventory and ordering of all restaurant dry-goods, food and alcohol',
-				'Coordinate, staff and retain crews of prep workers, cooks and servers',
-				'Create brand loyalty and provide customer service for strong repeat business'
+				'Oversaw and managed mid-size restaurant and staff of over 30 workers',
+				'Measured inventory and ordered all restaurant dry-goods, food and alcohol based on sales',
+				'Hired and retained crews of prep workers, cooks, cleaners and servers',
+				'Administered technical support for all Micros POS sales terminals, server and software'
 				],
 			url: 'http://www.nicksnyc.com'
 		},
@@ -65,16 +65,28 @@ export const resumeData = {
 	],
 	'Online Courses': [
 		{
+			title: 'Software Engineering Immersive Bootcamp',
+			date: '2019',
+			school: 'Fullstack Academy of Code',
+			url: 'https://www.fullstackacademy.com/software-engineering-immersive'
+		},
+		{
 			title: 'Front-End Web Developer Nanodegree',
 			date: '2015-2016',
 			school: 'Udacity',
 			url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
 		}
 	],
-	Skills: ['HTML & CSS', 'Responsive Web Design', 'Javascript', 'jQuery', 'Git/GitHub', 'React.js', 'Knockout.js', 'Google Maps API', 'Bootstrap', 'Wordpress', 'Graphic Design', 'Adobe Photoshop', 'Adobe Illustrator', 'Mac / OSX / iOS', 'PC / Windows', 'Management']
+	Skills: ['Javascript', 'Git/GitHub', 'React.js', 'HTML & CSS', 'Responsive Web Design', 'Redux', 'Node.js', 'Express.js', 'PostgreSQL', 'Sequelize', 'jQuery', 'Knockout.js', 'Google Maps API', 'Bootstrap', 'Wordpress', 'Graphic Design', 'Adobe Photoshop', 'Adobe Illustrator', 'Management']
 };
 
 export const portfolioData = [
+	{
+		title: 'Memory Match',
+		caption: 'Multiplayer online tile matching game built using React.js, Firebase realtime database and Adorable Avatars API.',
+		img: './images/danny-marquez-memory-screen.jpg',
+		url: 'https://memory-match-app.web.app/'
+	},
 	{
 		title: 'The Geber Girls',
 		caption: 'Single page band website using vanilla Javascript, HTML5 and CSS.',
@@ -83,7 +95,7 @@ export const portfolioData = [
 	},
 	{
 		title: 'Time Calculator (beta)',
-		caption: 'Web app to aid in time-based arithmetic calculations. Built with React.js.',
+		caption: 'Web app to aid in time-based arithmetic calculations. Built with React.js and LESS.',
 		img: './images/danny-marquez-time-calculator-opt.png',
 		url: 'https://codepen.io/DropTheLogic/full/WEzRPZ'
 	},

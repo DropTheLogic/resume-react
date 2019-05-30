@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 export const Resume = (props) => {
 	let jobs = [];
@@ -29,20 +29,27 @@ export const Resume = (props) => {
 	}
 
 	// Build Education section
-	let crs = props.resume['Online Courses'][0];
+	let courses = props.resume['Online Courses'];
 	let ed = props.resume['University Study'][0];
 	let education = (
 		<div>
-			<h4>{crs.school}</h4>
-			<div className="job-stats">
-				<a
-					href={crs.url}
-					target="_blank"
-					rel="noreferrer noopener">
-					<div>{crs.title}</div>
-				</a>
-				<div>{crs.date}</div>
-			</div>
+			{
+				courses.map(course => (
+					<Fragment key={course.title}>
+						<h4>{course.school}</h4>
+						<div className="job-stats">
+							<a
+								href={course.url}
+								target="_blank"
+								rel="noreferrer noopener">
+								<div>{course.title}</div>
+							</a>
+							<div>{course.date}</div>
+						</div>
+					</Fragment>
+				))
+			}
+
 			<h4>{ed.name}</h4>
 			<div className="job-stats">
 				<a
