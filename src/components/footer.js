@@ -28,7 +28,7 @@ export const Footer = (props) => {
 		<footer>
 			<ul>{props.navItems}</ul>
 			<div className="bio-icon-list">{iconEls}</div>
-			<div>© 2018 Danny Márquez. All rights reserved.</div>
+			<div>© 2018-{new Date().getFullYear()} Danny Márquez. All rights reserved.</div>
 		</footer>
 	);
 };
